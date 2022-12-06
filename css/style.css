@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: #fff;
+}
+
+/* inicia header */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgba(33, 32, 32, 0.777);
+    width: 100%;
+}
+
+.img-logo {
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+}
+
+h1 {
+    font-size: 40px;
+    color: rgb(250, 87, 6);
+    margin-top: 5px;
+    margin-left: 50px;
+    margin-right: 320px;
+}
+
+a{
+    text-decoration: none;
+}
+
+#buscar {
+    border: 1px;
+    border-color: #fff;
+    border-radius: 7px;
+    margin-top: 20px;
+    margin-left: 550px;
+    padding: 5px;
+}
+
+.img-carrito {
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.img-carrito img {
+    width: 40px;
+    height: 40px;
+}   
+
+/* INICIA MAIN */
+
+.container{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+margin-top: 30px;
+}
+
+.card {
+  position: relative;
+    width: 250px;
+    height: 300px;
+    transition: .5s;
+    margin: 0 50px 50px 20px;
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.card .front{
+    -webkit-box-shadow: 8px 8px 5px 0px rgba(77, 77, 77, 0.611);
+    -moz-box-shadow: 8px 8px 5px 0px rgba(77, 77, 77,0.611);
+    box-shadow: 8px 8px 5px 0px rgba(77, 77, 77, 0.611);
+}
+
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+}
+
+.card .back{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.card .back  {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 30px;
+    color: white;
+    background: rgba(0, 0, 0, .4);
+    text-align: center;
+    margin-left: 0;
+}
+
+.card .back p{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    line-height: 30px;
+    color: white;
+    background: rgba(0, 0, 0, .4);
+    text-align: center;
+    margin-left: 0;
+}
+
+h2{
+    margin: 10px;
+    font-size: 30px;
+    text-align: center;
+}
+
+p{
+    font-size: 20px;
+    visibility: hidden;
+    opacity: 0;
+}
+
+span{
+    font-weight: bold;
+    color: rgb(250, 87, 6);
+}
+
+.button {
+    color: rgb(250, 87, 6);
+    font-size: 14px;
+    border-radius: 5px;
+    border-color: #fff;
+    text-align: center;
+    padding: 3px;
+    width: 30%;
+   visibility: hidden;
+    cursor: pointer;
+}
+
+.button:hover {
+    color: #fff !important;
+    border-radius: 5px;
+    background-color: rgb(250, 87, 6);
+    border-color: rgb(250, 87, 6) !important;
+    cursor: pointer;
+    }
+
+.card .back .back__button{
+    text-align: center;
+}
+
+.card:hover{
+    cursor: pointer;
+}
+
+.card:hover .back{
+    height: 300px;
+ background: rgb(27,27, 27,.5);
+transition: .5s;
+}
+
+.card:hover p{
+    opacity: 1;
+    visibility: visible;
+}
+
+.card:hover .button{
+    visibility: visible;
+}
