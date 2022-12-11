@@ -1,18 +1,20 @@
 * {
-    margin: 0;
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 
 body {
     background-color: black;
     color: #fff;
+    display: flex;
+    flex-direction: column;
 }
 
-/* inicia header */
 header {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     background-color: rgba(33, 32, 32, 0.777);
     width: 100%;
 }
@@ -26,19 +28,19 @@ header {
 h1 {
     font-size: 40px;
     color: rgb(250, 87, 6);
-    margin-top: 5px;
-    margin-left: 50px;
-    margin-right: 320px;
+    margin-right: 280px;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
+
 #buscar {
     border: 1px;
-    border-color: #fff;
-    border-radius: 7px;
+    border-color: rgba(62, 61, 61, 0.777) !important;
+    background-color: rgba(62, 61, 61, 0.777);
+    border-radius: 10px;
     margin-top: 20px;
     margin-left: 550px;
     padding: 5px;
@@ -52,39 +54,59 @@ a{
 .img-carrito img {
     width: 40px;
     height: 40px;
-}   
+}
+
+.btn {
+    background-color: rgb(250, 87, 6);
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+    border-radius: 20px;
+    border: none;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: rgb(250, 87, 6);
+}
+
+h2 {
+    color: rgb(250, 87, 6);
+}
+
+.img {
+    width: 50%;
+    margin-bottom: 10px;
+}
 
 /* INICIA MAIN */
 
-.container{
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-margin-top: 30px;
+/* INICIAN CARDS */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
 }
 
 .card {
-  position: relative;
+    position: relative;
     width: 250px;
     height: 300px;
-    transition: .5s;
-    margin: 0 50px 50px 20px;
+    margin: 30px 50px 50px 37px;
 }
 
-.card .face {
+.card .front {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
     border-radius: 10px;
     overflow: hidden;
-    transition: .5s;
-}
-
-.card .front{
-    -webkit-box-shadow: 8px 8px 5px 0px rgba(77, 77, 77, 0.611);
-    -moz-box-shadow: 8px 8px 5px 0px rgba(77, 77, 77,0.611);
     box-shadow: 8px 8px 5px 0px rgba(77, 77, 77, 0.611);
+    transition: .5s;
 }
 
 .card .front img {
@@ -94,50 +116,55 @@ margin-top: 30px;
     transition: .5s;
 }
 
-.card .back{
+.card .back h2 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    background: rgba(0, 0, 0, .4);
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    /* margin-left: 0; */
+    margin-bottom: 0;
+}
+
+.card .back:hover h2 {
+    visibility: hidden;
+}
+
+.card .back {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 250px;
+    text-align: center;
 }
 
-.card .back  {
+.card .back p {
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 40px;
-    line-height: 30px;
+    line-height: 25px;
     color: white;
     background: rgba(0, 0, 0, .4);
+    border-bottom-right-radius: 10px;
     text-align: center;
     margin-left: 0;
 }
 
-.card .back p{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    line-height: 30px;
-    color: white;
-    background: rgba(0, 0, 0, .4);
-    text-align: center;
-    margin-left: 0;
-}
-
-h2{
-    margin: 10px;
-    font-size: 30px;
-    text-align: center;
-}
-
-p{
-    font-size: 20px;
+.back__text {
+    font-size: 18px;
     visibility: hidden;
     opacity: 0;
 }
 
-span{
+span {
+    font-size: 20px;
     font-weight: bold;
-    color: rgb(250, 87, 6);
+    background-color: rgb(250, 87, 6);
+    color: #fff;
+    padding: 5px;
 }
 
 .button {
@@ -148,7 +175,7 @@ span{
     text-align: center;
     padding: 3px;
     width: 30%;
-   visibility: hidden;
+    visibility: hidden;
     cursor: pointer;
 }
 
@@ -158,27 +185,138 @@ span{
     background-color: rgb(250, 87, 6);
     border-color: rgb(250, 87, 6) !important;
     cursor: pointer;
-    }
-
-.card .back .back__button{
-    text-align: center;
 }
 
-.card:hover{
+.card:hover {
     cursor: pointer;
 }
 
-.card:hover .back{
+.card:hover .back {
     height: 300px;
- background: rgb(27,27, 27,.5);
-transition: .5s;
+    background: rgb(27, 27, 27, .5);
+    transition: .5s;
 }
 
-.card:hover p{
+.card:hover p {
     opacity: 1;
     visibility: visible;
 }
 
-.card:hover .button{
+.card:hover .button {
     visibility: visible;
+}
+
+/* INICIA CARRITO */
+
+.main-carrito {
+    padding: 10px;
+    /* background-color: rgba(33, 32, 32, 0.777); */
+}
+
+h2 {
+    background: linear-gradient(yellow, red);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+}
+
+.tabla {
+    background-color: rgba(38, 38, 38, 0.201);
+}
+
+.tabla table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #2d2d2dac;
+}
+
+.tabla table th {
+    color: rgb(250, 87, 6);
+    text-align: center;
+    padding: 20px;
+}
+
+tr:nth-child(even) {
+    background-color: #1818185c;
+}
+
+table td {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.tabla__img-carrito {
+    width: 100px;
+    margin: 20px 0 10px 0;
+}
+
+#cantidad {
+    text-align: center;
+    padding: 2px;
+}
+
+.tabla__button {
+    color: rgb(250, 87, 6);
+    border-radius: 5px;
+}
+
+.tabla__button:hover {
+    color: #fff !important;
+    border-radius: 5px;
+    background-color: rgb(250, 87, 6);
+    border-color: rgb(250, 87, 6) !important;
+    cursor: pointer;
+}
+
+/* td .button {
+    margin: 0 0 0 0;
+} */
+
+/* .tabla2{
+    width: 100%;
+} */
+
+
+/* .total {
+    font-weight: 600;
+    padding: 20px;
+} */
+
+.total {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 730px;
+}
+
+.total p {
+    font-size: 20px;
+    color: rgb(250, 87, 6);
+    padding: 5px;
+    margin: 0 20px 0 30px;
+}
+
+.seg-fin {
+    display: flex;
+    margin-top: 20px;
+    justify-content: right;
+}
+
+.seg-fin p {
+    background-color: rgba(32, 32, 33, 0.56);
+    color: rgb(250, 87, 6);
+    padding: 5px;
+    margin: 0 20px 0 30px;
+}
+
+.seg-fin p:hover {
+    color: #fff !important;
+    background-color: rgb(250, 87, 6);
+    border-color: rgb(250, 87, 6) !important;
+}
+
+.seg-fin a {
+    text-decoration: none;
 }
