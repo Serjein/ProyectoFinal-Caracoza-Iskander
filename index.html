@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>K'AAY</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script defer src="./JS/plantillas.js"></script>
     <script defer src="./JS/app.js"></script>
 </head>
@@ -19,11 +20,12 @@
         </div>
         <h1>K'AAY</h1>
         <div class="buscador">
-            <label for="nombre"></label>
-            <input id="buscar" name="buscar" type="text" placeholder="🔍 Buscar" minlength="3" maxlength="50">
+            <label for="nombre">
+            <input id="buscar" name="buscar" type="search" placeholder="🔍 ¿Qué buscas?" minlength="3" maxlength="50">
+        </label>
         </div>
         <div class="img-carrito" >
-            <a href="./carrito.html" title="Ver carrito"> <img
+            <a href="./carrito.html" title="Ver carrito"> <img id="img-carrito"
                     src="./assets/imagenes/icons8-carrito-de-compras-48.png" alt="carrito"></a>
         </div>
     </header>
@@ -40,7 +42,7 @@
                     <h2>Issues</h2>
                     <p class="back__text"><span>Issues-Korn</span><br> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus
                         minima voluptasesse voluptates cupiditate praesentium perspiciatis fuga debitis. <br>
-                        <button class="button" title="Agregar al carrito">$50.00</button>
+                        <button class="button agregar" title="Agregar al carrito">$50.00</button>
                     </p>
                 </div>
             </div> -->
