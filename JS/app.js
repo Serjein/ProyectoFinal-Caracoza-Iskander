@@ -3,7 +3,7 @@ const container = document.getElementById("container")
 const buscar = document.querySelector("input#buscar")
 const URL = 'JSON/albums.json'
 const discos = []
-// const productos = []
+
 
 async function extraerAlbums() {
     try {
@@ -12,7 +12,7 @@ async function extraerAlbums() {
         if (data.length > 0) {
             discos.push(...data)
             llamarAlbums(discos)
-            activarClickBotones()
+            activarBotones()
         }
     } catch (error) {
         // container.innerHTML = retornoError()
@@ -21,7 +21,7 @@ async function extraerAlbums() {
 extraerAlbums()
 
 imgCarrito.addEventListener("mousemove", ()=> {
-    let totalProductos = discos.length
+    let totalProductos = album.length
         imgCarrito.title = `${totalProductos} productos en el carrito`
 })
 
@@ -43,7 +43,6 @@ function activarBotones() {
             let resultado = discos.find(disc => disc.id === parseInt(btn.id))
            album.push(resultado)
             localStorage.setItem("miAlbum", JSON.stringify(album))
-            // toast(`'${resultado.nombre}' se agregó al carrito`, 'green')
         })
     })
 }
@@ -54,7 +53,7 @@ function filtrarAlbums() { //Aplicamos operador ternario
             llamarAlbums(resultado)
             activarBotones()
         } else {
-            console.warn("No se han encontrado coincidencias.")
+            toast(`No lo tenemos por el momento`, '#FA5706')
         }
 }
 
@@ -64,4 +63,14 @@ buscar.addEventListener("search", ()=> {
 
 buscar.addEventListener("change", ()=> activarBotones())
 
-
+const toast = (text, bgcolor)=> {
+    Toastify({
+        text: text,
+        duration: 3000,
+        close: true,
+        gravity: "top", 
+        position: "right",
+        stopOnFocus: true, 
+        style: { background: bgcolor || 'CornFlowerBlue', fontSize: '18px'}
+      }).showToast();
+}
